@@ -39,16 +39,252 @@
     overflow-x: hidden;
   }
 
-  /* NOISE TEXTURE OVERLAY */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.4;
+/* NOISE TEXTURE OVERLAY */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+/* MOBILE STYLES */
+@media (max-width: 768px) {
+  :root {
+    --mobile-padding: 20px;
   }
+
+  body {
+    font-size: 15px;
+  }
+
+  nav {
+    padding: 15px var(--mobile-padding);
+  }
+
+  .nav-links {
+    gap: 24px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .nav-cta {
+    padding: 8px 20px;
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 100px var(--mobile-padding) 60px;
+  }
+
+  .hero-eyebrow {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .hero-headline {
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .hero-dutch {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-primary {
+    padding: 12px 24px;
+    font-size: 13px;
+  }
+
+  .hero-credentials {
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .cred-item {
+    align-items: center;
+  }
+
+  .cred-value {
+    font-size: 18px;
+  }
+
+  section {
+    padding: 60px var(--mobile-padding);
+  }
+
+  .section-title {
+    font-size: clamp(28px, 3.5vw, 42px);
+    line-height: 1.2;
+  }
+
+  .section-sub {
+    font-size: 16px;
+  }
+
+  .proof-strip {
+    padding: 32px var(--mobile-padding);
+  }
+
+  .proof-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-pull {
+    font-size: 18px;
+  }
+
+  .about-story {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .about-story p {
+    margin-bottom: 16px;
+  }
+
+  .about-tags {
+    justify-content: center;
+  }
+
+  .about-tag {
+    font-size: 11px;
+    padding: 4px 12px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1px;
+  }
+
+  .service-card {
+    padding: 24px;
+  }
+
+  .service-number {
+    margin-bottom: 16px;
+  }
+
+  .service-name {
+    font-size: 18px;
+  }
+
+  .service-desc {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .service-tags {
+    gap: 4px;
+  }
+
+  .service-tag {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+
+  .engage-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .engage-card {
+    padding: 24px 20px;
+  }
+
+  .engage-name {
+    font-size: 20px;
+  }
+
+  .engage-desc {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .engage-list li {
+    font-size: 12px;
+    gap: 8px;
+  }
+
+  .creds-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cred-card {
+    padding: 20px;
+  }
+
+  .cred-card-icon {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .cred-card-title {
+    font-size: 14px;
+  }
+
+  .cred-card-text {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .cta-section {
+    padding: 80px var(--mobile-padding);
+  }
+
+  .cta-section::before {
+    width: 400px;
+    height: 400px;
+  }
+
+  .cta-sub {
+    font-size: 16px;
+  }
+
+  footer {
+    padding: 32px var(--mobile-padding);
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .footer-legal {
+    text-align: center;
+  }
+
+  .divider {
+    margin: 0 var(--mobile-padding);
+  }
+}
 
   /* NAV */
   nav {
@@ -70,9 +306,8 @@
     font-weight: 700;
     color: var(--white);
     letter-spacing: -0.02em;
+    text-decoration: none;
   }
-
-  .nav-logo span { color: var(--accent-bright); }
 
   .nav-links {
     display: flex;
@@ -760,7 +995,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Mind<span>Spark</span> BV</div>
+  <a href="#" class="nav-logo">Mind Spark BV</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
@@ -775,7 +1010,7 @@
   <div class="hero-eyebrow">
     <span class="eyebrow-badge">LinkedIn Top Voice</span>
     <span class="eyebrow-dot"></span>
-    <span class="eyebrow-text">Netherlands-registered · EU-wide remote · KvK: [your number]</span>
+    <span class="eyebrow-text">Netherlands-registered · EU-wide remote · KvK</span>
   </div>
 
   <h1 class="hero-headline">
@@ -1095,7 +1330,7 @@
     <li><a href="https://bio.site/dougortiz" target="_blank">bio.site</a></li>
     <li><a href="https://linkedin.com/in/doug-ortiz-architect" target="_blank">LinkedIn</a></li>
   </ul>
-  <p class="footer-legal">© 2026 MindSpark BV · KvK: [your number] · BTW: [your VAT number] · Bussum, North Holland, Netherlands · All rights reserved.</p>
+  <p class="footer-legal">© 2026 MindSpark BV · KvK registered · Bussum, North Holland, Netherlands · All rights reserved.</p>
 </footer>
 
 <script>
